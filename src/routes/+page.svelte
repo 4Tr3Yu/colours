@@ -19,13 +19,17 @@
 		}
 	]
 </script>
-
-<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
-	<h1 class="h1">Colors :)</h1>
-	
-</AppBar>
-<div class="container pt-5 mx-auto">
-	{#each paletes as palete}
-		<Palete name={palete.name} colors={palete.colors} />
-	{/each}
+<div class="wrapper">
+	<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+		<h1 class="h1">Colors :)</h1>
+		
+	</AppBar>
+	<div class="container pt-5 mx-auto">
+		{#each paletes as palete}
+			<Palete name={palete.name} colors={palete.colors} />
+		{/each}
+	</div>
 </div>
+<style>
+	
+</style>
