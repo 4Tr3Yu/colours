@@ -1,15 +1,32 @@
-<!-- YOU CAN DELETE EVERYTHING IN THIS PAGE -->
+<script>
+	import { AppBar } from '@skeletonlabs/skeleton';
+	import Palete from '../components/palete.svelte';
+	let paletes = [
+		{
+			name: 'palete 1',
+			colors: [
+				'#006466',
+				'#065A60',
+				'#0B525B',
+				'#144552',
+				'#1B4332',
+				'#212F45',
+				'#272640',
+				'#312244',
+				'#3E1F47',
+				'#4A1942',
+			]
+		}
+	]
+</script>
 
-<div class="container h-full mx-auto flex justify-center items-center">
-	<div class="space-y-5">
-		<h1 class="h1">Let's get cracking bones!</h1>
-		<p>Start by exploring:</p>
-		<ul>
-			<li><code class="code">/src/routes/+layout.svelte</code> - barebones layout</li>
-			<li><code class="code">/src/app.postcss</code> - app wide css</li>
-			<li>
-				<code class="code">/src/routes/+page.svelte</code> - this page, you can replace the contents
-			</li>
-		</ul>
-	</div>
+<AppBar gridColumns="grid-cols-3" slotDefault="place-self-center" slotTrail="place-content-end">
+	<svelte:fragment slot="lead"></svelte:fragment>
+	<h1>Colors :)</h1>
+	
+</AppBar>
+<div class="container">
+	{#each paletes as palete}
+		<Palete name={palete.name} colors={palete.colors} />
+	{/each}
 </div>
